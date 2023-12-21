@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Adapt Page On Grid</title>
+	<style>
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 16px;
+			height: 100%;
+			box-sizing: border-box;
+		}
+
+		.wrapper {
+			position: relative;
+			min-height: 100%;
+		}
+
+		.container {
+			max-width: 980px;
+			margin: 0 auto;
+		}
+
+		.container img {
+			width: 100%;
+			max-height: 300px;
+			display: block;
+
+		}
+
+		header {
+			margin-bottom: 20px;
+		}
+
+		header h1 {
+			margin: 0;
+			background-color: #c2c2c2;
+			font-size: 2rem;
+			line-height: 150px;
+			text-align: center;
+		}
+		@media (max-width: 768px) {
+			header h1 {
+				line-height: 100px;
+				font-size: 1.2rem;
+			}
+		}
+
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+		.news__section {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+			grid-auto-rows: auto;
+			grid-auto-flow: dense;
+			gap: 5px;
+		}
+
+		@media (max-width: 768px) {
+			.news__section {
+				grid-template-columns: 1fr;
+			}
+		}
+
+		.news__item {
+			background-color: #e9e9e9;
+			padding: 10px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.news__name {
+			text-align: center;
+			font-size: 1.2rem;
+			margin: 5px 0;
+		}
+
+		.news__story {
+			color: #939393;
+			font-size: 1rem;
+			text-align: center;
+		}
+
+		.news__link {
+			text-decoration: none;
+			color: #fff;
+			background-color: #68a4c4;
+			display: block;
+			text-align: center;
+			padding: 10px 0;
+		}
+
+		.text__item {}
+
+		.text__name {
+			font-size: 1.5rem;
+			font-weight: bold;
+		}
+
+		.text__main {
+			color: #8a8a8a;
+			text-align: justify;
+		}
+
+		footer {
+			background-color: #68a4c4;
+		}
+
+		footer h2 {
+			color: #fff;
+			margin: 0;
+			font-size: 1.2rem;
+			line-height: 100px;
+		}
+		@media (max-width: 768px) {
+			footer h2 {
+				font-size: 0.8rem;
+				line-height: 50px;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+
+	<header>
+		<div class="container">
+			<img class="header-image" alt src="img/header-img.jpg" alt="">
+		</div>
+		<h1>IT впереди планеты всей</h1>
+	</header>
+
+	<section>
+		<div class="container">
+			<ul class="news__section">
+				<li class="news__item ">
+					<h4 class="news__name">Высокое искусство вашими руками</h4>
+					<p class="news__story">Сбер представил бесплатную нейросеть Kandinsky 3.0.</p>
+					<a class="news__link" href="#">Читать далее</a>
+				</li>
+				<li class="news__item">
+					<h4 class="news__name">Представлена Hyundai Elantra N2024</h4>
+					<p class="news__story">Компания Hyundai представила Elantra, в которой используются современные
+						технологии.</p>
+					<a class="news__link" href="#">Читать далее</a>
+				</li>
+				<li class="news__item">
+					<h4 class="news__name">История достойная экранизации</h4>
+					<p class="news__story">Сэм Альтман вернется на пост генерального директора
+						OpenAI.</p>
+					<a class="news__link" href="#">Читать далее</a>
+				</li>
+				<li class="news__item">
+					<h4 class="news__name">IT-сектор в Беларуси</h4>
+					<p class="news__story">Доля IT-сектора в экономике Беларуси снизилась до 4.7%.</p>
+					<a class="news__link" href="#">Читать далее</a>
+				</li>
+			</ul>
+			<div class="text__section">
+				<div class="text__item">
+					<h3 class="text__name">Объектно-ореинтированное программирование (ООП)</h3>
+					<p class="text__main">Объектно-ориентированное программирование — методология программирования, основанная
+						на представлении программы в виде совокупности взаимодействующих объектов, каждый из которых является
+						экземпляром определённого класса, а классы образуют иерархию наследования.</p>
+				</div>
+				<div class="text__item">
+					<h3 class="text__name">Инкапсуляция</h3>
+					<p class="text__main">Инкапсуляция - процесс разделения элементов абстракций, определяющих её структуру
+						(данные) и поведение (методы); инкапсуляция предназначена для изоляции контрактных обязательств абстракции
+						(протокол/интерфейс) от их реализации. На практике это означает, что класс должен состоять из двух частей:
+						интерфейса и реализации. В реализации большинства языков программирования (C++, C#, Java и другие)
+						обеспечивается механизм сокрытия, позволяющий разграничивать доступ к различным частям компонента.</p>
+				</div>
+				<div class="text__item">
+					<h3 class="text__name">Абстракция</h3>
+					<p class="text__main">Абстракция данных — одно из наиболее старых понятий объектно-ориентированного
+						программирования, возникшее ещё до его появления. Абстракция данных связывает лежащий в основе тип данных
+						с набором операций над ним. Пользователь типа данных не имеет прямого доступа к его реализации, но может
+						работать с данными через предоставленный набор операций. Преимущество абстракции данных в разделении
+						операций над
+						данными и внутреннего представления этих данных, что позволяет изменять реализацию, не затрагивая
+						пользователей типа
+						данных. Такое разделение может быть выражено через специальный «интерфейс», сосредотачивающий описание
+						всех
+						возможных применений программы.</p>
+				</div>
+				<div class="text__item">
+					<h3 class="text__name">Наследование</h3>
+					<p class="text__main">Наследование — концепция объектно-ориентированного программирования, согласно которой
+						абстрактный тип данных может наследовать данные и функциональность некоторого существующего типа,
+						способствуя
+						повторному использованию компонентов программного обеспечения.</p>
+				</div>
+				<div class="text__item">
+					<h3 class="text__name">Полиморфизм</h3>
+					<p class="text__main">Полиморфизм в объектно-ориентированном программировании – это возможность обработки
+						разных
+						типов данных, т. е. принадлежащих к разным классам, с помощью "одной и той же" функции, или метода. На
+						самом
+						деле
+						одинаковым является только имя метода, его исходный код зависит от класса. Кроме того, результаты работы
+						одноименных методов могут существенно различаться. Поэтому в данном контексте под полиморфизмом понимается
+						множество форм одного и того же слова – имени метода.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<div class="container">
+			<h2>&#169; Разработано с помощью StrongНервы&#174;</h2>
+		</div>
+	</footer>
+
+
+</body>
+
+</html>
